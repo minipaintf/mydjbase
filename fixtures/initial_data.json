@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "vincent", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2012-12-23T14:32:27Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$sJj3Pnumwf00$msuU5xlo6nrpLJgWBuw4AdNoFKfrvWsFNdNCCEzk8xY=", 
+            "email": "wangchao@xiaoma.com", 
+            "date_joined": "2012-12-18T10:11:11Z"
+        }
+    }
+]
