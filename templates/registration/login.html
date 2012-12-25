@@ -70,15 +70,11 @@
         
         <input type="text" class="input-block-level" placeholder="username" name="username">
         {% for error in form.username.errors %}
-        <span class="label label-important">用户名{{ error|escape }}</span>
-        <p class="text-error">用户名{{ error|escape }}</p>
+        <p class="label label-important">用户名{{ error|escape }}</p>
         {% endfor %}
         <input type="password" class="input-block-level" placeholder="Password" name="password">
         {% for error in form.password.errors %}
-        <div class="alert alert-error">
-        密码{{ error|escape }}
-        </div>
-        <p class="text-error">密码{{ error|escape }}</p>
+        <p class="label label-important">密码{{ error|escape }}</p>
         {% endfor %}
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> 记住我
@@ -92,11 +88,6 @@
         {{ error|escape }}
         {% endfor %}
       </div>
-      {% endif %}
-      {% if form.non_field_errors %}
-        {% for error in form.non_field_errors %}
-      <p class="text-error">{{ error|escape }}</p>
-        {% endfor %}
       {% endif %}
 
     </div> <!-- /container -->
