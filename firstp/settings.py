@@ -1,5 +1,6 @@
 # Django settings for firstp project.
 
+import os.path
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -64,7 +65,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/Users/vincent/Dropbox/dev/workspace/python/201212/firstp/static',
+    os.path.join(os.getcwd(), 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -116,7 +117,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/vincent/Dropbox/dev/workspace/python/201212/firstp/templates",
+    os.path.join(os.getcwd(), 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -165,5 +166,5 @@ LOGGING = {
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-import os.path
+
 FIXTURE_DIRS = (os.path.join(os.getcwd(), 'fixtures'),)
