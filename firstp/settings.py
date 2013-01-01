@@ -1,6 +1,7 @@
 # Django settings for firstp project.
-
+# add for the static and template files
 import os.path
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

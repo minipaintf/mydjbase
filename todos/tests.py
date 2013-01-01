@@ -5,7 +5,9 @@
 
 from django.test import TestCase
 from django.test.client import Client
-
+from django.test import LiveServerTestCase
+from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium.webdriver.common.keys import Keys
 
 
 class IndexViewTest(TestCase):
@@ -77,7 +79,32 @@ class loginTestCase(TestCase):
         self.assertTemplateUsed('/registration/login.html')
         self.assertContains(response, '请输入正确的用户名和密码。请注意两者都是大小写敏感的。')
 
+class loginBDDTestCase(LiveServerTestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.selenium = WebDriver()
+        super(loginBDDTestCase, cls).setUpClass()
 
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super(loginBDDTestCase, cls).tearDownClass()
+
+    def test_login(self):
+        self.selenium.get('%s%s' % (self.live_server_url, '/accounts/login/'))
+        username_input = self.selenium.find_element_by_name("username")
+        username_input.send_keys('myuser')
+        password_input = self.selenium.find_element_by_name("password")
+        password_input.send_keys('secret')
+        password_input.send_keys(Keys.RETURN)
+        # self.selenium.find_element_by_tag_name('button').click()
+        import sys
+        #print sys.getdefaultencoding()
+        reload(sys)
+        sys.setdefaultencoding('utf-8')
+        body = self.selenium.find_element_by_tag_name('body')
+        self.assertIn('请输入正确的用户名和密码。请注意两者都是大小写敏感的。', body.text)
+        self.assertIn(unicode('请输入正确的用户名和密码。请注意两者都是大小写敏感的。', "utf-8"), body.text)
 
 
 
