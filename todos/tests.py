@@ -5,7 +5,9 @@
 
 from django.test import TestCase
 from django.test.client import Client
-
+from django.test import LiveServerTestCase
+from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium.webdriver.common.keys import Keys
 
 
 class IndexViewTest(TestCase):
@@ -34,7 +36,7 @@ class todosIndexViewTest(TestCase):
         self.assertContains(response,
             '<title>首页 - 任务列表 - 网络组内部业务系统</title>',
             status_code=200)
-
+# 测试登录的流程
 class loginTestCase(TestCase):
     """
     the page have login form
@@ -77,7 +79,50 @@ class loginTestCase(TestCase):
         self.assertTemplateUsed('/registration/login.html')
         self.assertContains(response, '请输入正确的用户名和密码。请注意两者都是大小写敏感的。')
 
+# 登录错误之后的错误信息测试,以客户端的方式(selenium)测试
+class loginBDDTestCase(LiveServerTestCase):
+    fixtures = ['initial_data.json']
+    @classmethod
+    def setUpClass(cls):
+        cls.selenium = WebDriver()
+        super(loginBDDTestCase, cls).setUpClass()
 
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super(loginBDDTestCase, cls).tearDownClass()
+
+    def test_login(self):
+        """
+        测试登录错误的时候的提示信息
+        """
+        self.selenium.get('%s%s' % (self.live_server_url, '/accounts/login/'))
+        username_input = self.selenium.find_element_by_name("username")
+        username_input.send_keys('myuser')
+        password_input = self.selenium.find_element_by_name("password")
+        password_input.send_keys('secret')
+        password_input.send_keys(Keys.RETURN)
+        # self.selenium.find_element_by_tag_name('button').click()
+        
+        body = self.selenium.find_element_by_tag_name('body')
+        self.assertIn('请输入正确的用户名和密码。请注意两者都是大小写敏感的。', body.text)
+        self.assertIn(unicode('请输入正确的用户名和密码。请注意两者都是大小写敏感的。', "utf-8"), body.text)
+
+        """
+        测试 正确登录之后的跳转 是否带参数 返回原来页面  用的是首页
+        """
+        self.selenium.get('%s%s' % (self.live_server_url, '/?akjasd=ajshdkajshd'))
+        username_input = self.selenium.find_element_by_name("username")
+        username_input.send_keys('vincent')
+        password_input = self.selenium.find_element_by_name("password")
+        password_input.send_keys('1q2w3e4r')
+        password_input.send_keys(Keys.RETURN)
+        # self.selenium.find_element_by_tag_name('button').click()
+        current_url = self.selenium.current_url
+        current_url_ex = '%s%s' % (self.live_server_url, '/?akjasd=ajshdkajshd')
+        self.assertEqual(current_url_ex, current_url)
+
+        # TODO: 测试其它页面登录之后的跳转
 
 
 

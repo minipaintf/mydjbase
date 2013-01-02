@@ -79,6 +79,7 @@
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> 记住我
         </label>
+        <input type="hidden" name="next" value="{{ next }}" />
         <button class="btn btn-large btn-primary" type="submit">登录</button>
       </form>
       {% if form.non_field_errors %}
