@@ -90,14 +90,15 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-# TEMPLATE_CONTEXT_PROCESSORS = (
-#     'django.core.context_processors.debug',
-#     'django.core.context_processors.i18n',
-#     'django.core.context_processors.media',
-#     'django.core.context_processors.static',
-#     'django.contrib.auth.context_processors.auth',
-#     'django.contrib.messages.context_processors.messages',
-# )
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+)
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -169,3 +170,8 @@ LOGIN_REDIRECT_URL = '/'
 
 
 FIXTURE_DIRS = (os.path.join(os.getcwd(), 'fixtures'),)
+
+import sys
+#print sys.getdefaultencoding()
+reload(sys)
+sys.setdefaultencoding('utf-8')

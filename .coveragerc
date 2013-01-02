@@ -1,0 +1,25 @@
+[run]
+branch = True
+source =
+    ./
+
+omit = 
+    */__init__.py,
+    */test/*,
+    */tests.py
+
+
+[report]
+omit = 
+    */__init__.py,
+    */test/*,
+    */tests.py,
+    */settings.py,
+    */wsgi.py,
+    */manage.py
+
+
+
+
+[html]
+directory = coverage_html_report
