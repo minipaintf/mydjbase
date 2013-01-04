@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.template import Context, loader, RequestContext
 from django.shortcuts import render_to_response
 from django.http import HttpResponse

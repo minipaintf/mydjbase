@@ -1,5 +1,6 @@
 # Django settings for firstp project.
 # add for the static and template files
+from django.utils.translation import ugettext, ugettext_lazy as _
 import os.path
 
 DEBUG = True
@@ -30,7 +31,15 @@ TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'zh-cn'
+LANGUAGE_CODE = 'zh-CN'
+
+LOCALE_PATHS = (
+    os.path.join(os.getcwd(), 'locale'),
+)
+LANGUAGES = ( 
+    ('en-us', _('English')), 
+    ('zh-CN', _('Chinese')), 
+) 
 
 SITE_ID = 1
 
@@ -103,6 +112,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -133,7 +143,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'todos',
+    'apps.todos',
+    'apps.registration',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -69,6 +69,7 @@ class loginTestCase(TestCase):
         self.assertRedirects(response, '/',status_code=302, target_status_code=200)
 
         # 错误的登录 没有输入东西
+        response = c.get('/accounts/login/')
         response = c.post('/accounts/login/', {'username': '', 'password': ''})
         self.assertTemplateUsed('/registration/login.html')
         self.assertContains(response, '用户名这个字段是必填项')

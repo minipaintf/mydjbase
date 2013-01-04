@@ -7,7 +7,9 @@ omit =
     */__init__.py,
     */test/*,
     */tests.py
-
+    */settings.py,
+    */wsgi.py,
+    */manage.py
 
 [report]
 omit = 

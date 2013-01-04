@@ -1,11 +1,33 @@
-2013-01-02:
- ✔ 测试我在什么页面登录,登录之后应该跳转回原有的页面 @done (13-01-03 00:22)
- ☐ 增加.coveragerc配置文件,来指定报告的形式和源代码目录˜
+2013-01-04:
+ ☐ django 增量同步数据库
+ ☐ 404 500页面
+ ☐ form的save方法有个问题
+ ☐ 把http://djangobook.py3k.cn/2.0/chapter07/看完
+ ☐ python的文档生成,和站点.sphinx?
+ ☐ python文档注释规范,风格指导
+
+注册流程:
+ ☐ 添加model
+ ☐ 邮件测试 https://docs.djangoproject.com/en/dev/topics/email/#file-backend
+ ☐ 重写django-registration这个项目到自己的项目里
+ ☐ 发送验证邮件
 
 --- ✄ -----------------------
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✘ 部署到正式环境 @cancelled (13-01-04 17:45)
+ ✔ 同时测试多个app @done (13-01-04 15:24)
+ ✔ form的is_valid如何工作 @done (13-01-04 15:24)
+ ✔ 一个表单的验证如何自定义,比如email @done (13-01-04 15:24)
+ ✔ clean_username什么意思 cleaned_data如何工作 @done (13-01-04 15:24)
+ ✔ clean_这个函数和CharField都能校验吗? @done (13-01-04 15:24)
+ ✘ 测试不要对安装的包内测试 @cancelled (13-01-04 14:57)
+ ✔ 国际化 @done (13-01-04 14:35)
+ ✔ 把app都挪到apps文件夹 @done (13-01-04 11:45)
+ ✔ 写一个自动测试的脚本 @done (13-01-03 01:59)
+ ✔ 测试我在什么页面登录,登录之后应该跳转回原有的页面 @done (13-01-03 00:22)
+ ✔ 增加.coveragerc配置文件,来指定报告的形式和源代码目录˜ @done (13-01-03 01:37)
  ✔ selenium的测试的中文的问题 @done (12-12-31 22:14)
  ✔ 测试点击之后的出错信息,像cucumber一样,用selenium? @done (12-12-31 22:14)
  ✔ 正式环境的部署 @deploy @done (12-12-27 00:11)
@@ -18,7 +40,7 @@ Archive:
  ✘ 添加jquery validate @cancelled (12-12-25 23:16)
  ✔ 查查auth的可替代的alternative @done (12-12-25 00:53)
  ✘ 是用form自带的样式重写,还是想办法修改模板 @cancelled (12-12-25 00:53)
- ✘ 测试登录的跳转回登录前的页面 @cancelled (12-12-25 23:16)
+ ✔ 测试登录的跳转回登录前的页面 @done (13-01-03 23:35)
  ✔ 测试登录失败的跳转 @done (12-12-25 00:53)
  ✔ 测试错误信息的位置和文字 @done (12-12-25 00:19)
  ✔ 测试登录流程 @test @done (12-12-24 00:14)
