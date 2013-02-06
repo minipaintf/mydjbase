@@ -1,16 +1,29 @@
+2013-02-07:
+ ☐ test分目录
+
+
 2013-01-04:
  ☐ django 增量同步数据库
  ☐ 404 500页面
- ☐ form的save方法有个问题
+ ☐ form的save方法有个问题,为什么要有个commit参数
  ☐ 把http://djangobook.py3k.cn/2.0/chapter07/看完
  ☐ python的文档生成,和站点.sphinx?
  ☐ python文档注释规范,风格指导
+ ☐ python的super
+ ☐ django form里的meta
+ ☐ templates放到app的下面
+ ☐ tests变成文件夹,每个文件单独测试
+ ☐ python 方法的参数
 
 注册流程:
- ☐ 添加model
+ ✔ 添加model registrationprofile @done (13-01-04 18:24)
+ ✔ 直接继承UserCreationForm? @done (13-01-06 09:58)
+ ☐ 验证邮件的激活码的编码
+ ☐ 邮件的配置
  ☐ 邮件测试 https://docs.djangoproject.com/en/dev/topics/email/#file-backend
  ☐ 重写django-registration这个项目到自己的项目里
  ☐ 发送验证邮件
+ ☐ 添加admin site
 
 --- ✄ -----------------------
 

@@ -6,7 +6,8 @@ source =
 omit = 
     */__init__.py,
     */test/*,
-    */tests.py
+    */tests/*,
+    */tests.py,
     */settings.py,
     */wsgi.py,
     */manage.py
@@ -15,6 +16,7 @@ omit =
 omit = 
     */__init__.py,
     */test/*,
+    */tests/*,
     */tests.py,
     */settings.py,
     */wsgi.py,
