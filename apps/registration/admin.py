@@ -15,9 +15,7 @@ class RegistrationAdmin(admin.ModelAdmin):
 
     def activate_users(self, request, queryset):
         """
-        Activates the selected users, if they are not alrady
-        activated.
-        
+        直接激活用户
         """
         for profile in queryset:
             RegistrationProfile.objects.activate_user(profile.activation_key)
@@ -25,13 +23,7 @@ class RegistrationAdmin(admin.ModelAdmin):
 
     def resend_activation_email(self, request, queryset):
         """
-        Re-sends activation emails for the selected users.
-
-        Note that this will *only* send activation emails for users
-        who are eligible to activate; emails will not be sent to users
-        whose activation keys have expired or who have already
-        activated.
-        
+        重新发送激活邮件的方法
         """
         if Site._meta.installed:
             site = Site.objects.get_current()

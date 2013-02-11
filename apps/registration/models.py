@@ -22,6 +22,7 @@ SHA1_RE = re.compile('^[a-f0-9]{40}$')
 
 
 class RegistrationManager(models.Manager):
+    # 激活用户
     def activate_user(self, activation_key):
         # Make sure the key we're trying conforms to the pattern of a
         # SHA1 hash; if it doesn't, no point trying to look it up in
@@ -75,7 +76,7 @@ class RegistrationManager(models.Manager):
                 profile.delete()
 
 class RegistrationProfile(models.Model):
-
+    # 激活以后的替换
     ACTIVATED = u"ALREADY_ACTIVATED"
     
     user = models.ForeignKey(User, unique=True, verbose_name=_('user'))
@@ -89,13 +90,14 @@ class RegistrationProfile(models.Model):
     
     def __unicode__(self):
         return u"Registration information for %s" % self.user
-    
+    # 判断是否验证过期了
     def activation_key_expired(self):
         expiration_date = datetime.timedelta(days=settings.ACCOUNT_ACTIVATION_DAYS)
         return self.activation_key == self.ACTIVATED or \
                (self.user.date_joined + expiration_date <= datetime_now())
     activation_key_expired.boolean = True
-
+    activation_key_expired.short_description = _("Activation Key Expired")
+    # 发送验证的邮件
     def send_activation_email(self, site):
         ctx_dict = {'activation_key': self.activation_key,
                     'expiration_days': settings.ACCOUNT_ACTIVATION_DAYS,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-04 13:19+0800\n"
+"POT-Creation-Date: 2013-02-11 23:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: apps/registration/forms.py:15
+#: apps/registration/admin.py:24
+msgid "Activate users"
+msgstr "激活用户"
+
+#: apps/registration/admin.py:44
+msgid "Re-send activation emails"
+msgstr "重新发送激活邮件"
+
+#: apps/registration/forms.py:14
 msgid "A user with that username already exists."
 msgstr ""
 
@@ -30,26 +38,89 @@ msgstr "此邮箱已经存在"
 msgid "The two password fields didn't match."
 msgstr ""
 
-#: apps/registration/forms.py:19
-msgid "Username"
+#: apps/registration/models.py:82
+msgid "user"
 msgstr ""
 
-#: apps/registration/forms.py:21
-msgid "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."
+#: apps/registration/models.py:83
+msgid "activation key"
+msgstr "激活码"
+
+#: apps/registration/models.py:88
+msgid "registration profile"
+msgstr "注册属性"
+
+#: apps/registration/models.py:89
+msgid "registration profiles"
+msgstr "注册属性"
+
+#: apps/registration/models.py:99
+msgid "Activation Key Expired"
+msgstr "激活码过期"
+
+#: firstp/settings.py:41
+msgid "English"
 msgstr ""
 
-#: apps/registration/forms.py:24
-msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
+#: firstp/settings.py:42
+msgid "Chinese"
 msgstr ""
 
-#: apps/registration/forms.py:26
-msgid "Password"
+#: templates/registration/activation_email.txt:1
+#, python-format
+msgid ""
+"Hi,\n"
+"\n"
+"This is an automatic email to help you complete your registration\n"
+"with %(site_name)s.\n"
+"\n"
+"Please open the following link in your web browser. If the link\n"
+"is split over several lines, you may need to copy it in the\n"
+"address bar."
 msgstr ""
 
-#: apps/registration/forms.py:28
-msgid "Password confirmation"
+#: templates/registration/activation_email.txt:12
+#, python-format
+msgid ""
+"\n"
+"If there is a problem with your registration, please reply to\n"
+"this email.\n"
+"\n"
+"Best regards,\n"
+"%(site_name)s\n"
 msgstr ""
 
-#: apps/registration/forms.py:30
-msgid "Enter the same password as above, for verification."
-msgstr ""
+#: templates/registration/activation_email_subject.txt:1
+#, python-format
+msgid "Your registration on %(site_name)s"
+msgstr "您在%(site_name)s上的注册请求"
+
+#: templates/registration/registration_closed.html:4
+msgid "Registration closed"
+msgstr "注册已经关闭"
+
+#: templates/registration/registration_closed.html:10
+msgid "Please try"
+msgstr "请尝试"
+
+#: templates/registration/registration_closed.html:10
+msgid "registering again"
+msgstr "再次注册"
+
+#: templates/registration/registration_complete.html:6
+msgid "Registration Complete"
+msgstr "注册完成"
+
+#: templates/registration/registration_complete.html:8
+msgid "Check Your Inbox..."
+msgstr "检查您的收件箱"
+
+#: templates/registration/registration_complete.html:9
+msgid ""
+"Your account has been created, but you still need to confirm your email "
+"address."
+msgstr "您的账户已经创建,但是您还需要去您的邮箱进行确认"
+
+#: templates/registration/registration_complete.html:11
+msgid "Please check your email."
+msgstr "请去登录您的邮箱检查"

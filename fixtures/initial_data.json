@@ -16,5 +16,13 @@
             "email": "wangchao@xiaoma.com", 
             "date_joined": "2012-12-18T10:11:11Z"
         }
+    },
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "localhost:8000", 
+            "name": "dev env"
+        }
     }
 ]

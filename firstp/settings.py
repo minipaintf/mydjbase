@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for firstp project.
 # add for the static and template files
 from django.utils.translation import ugettext, ugettext_lazy as _
@@ -176,6 +177,14 @@ LOGGING = {
     }
 }
 
+
+DEFAULT_FROM_EMAIL = 'noreply@zuokafei.com'
+EMAIL_HOST = 'www.zuokafei.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'noreply@zuokafei.com'
+EMAIL_HOST_PASSWORD = 'qDmbbuk6V3'
+EMAIL_USE_TLS = False
+
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
@@ -186,3 +195,10 @@ import sys
 #print sys.getdefaultencoding()
 reload(sys)
 sys.setdefaultencoding('utf-8')
+
+
+# ---- 注册相关设置
+# 验证码实效时间
+ACCOUNT_ACTIVATION_DAYS = 7
+# 注册开放
+REGISTRATION_OPEN = True

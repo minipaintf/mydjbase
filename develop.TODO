@@ -1,19 +1,42 @@
+2013-02-11:
+ ✘ signal @cancelled (13-02-11 23:02)
+ ✘ Admin测试 @cancelled (13-02-11 23:02)
+ ☐ 登录的测试
+ ☐ 整个登录和注册的模板编写优化
+ ☐ 换bootstrap的版本
+ ☐ locale templates fixtures需要分目录? 
+ ☐ 注册的form还有几种形式 在那个第三方的代码里面可以参考
+
+2013-02-09:
+ ✔ 继续registration的model的测试 @done (13-02-09 19:00)
+ ✔ 把原来的view测试移动到整合测试或者叫行为测试里 @done (13-02-09 19:00)
+ ✔ Site是怎么一回事 @done (13-02-10 15:00)
+ ✔ 测试的时候Site怎么使用 @done (13-02-10 15:00)
+ ✔ management @done (13-02-11 20:05)
+ ✔ 测试视图层views @done (13-02-11 20:05)
+ ✘ 增量的方式增加国际化的文件 @cancelled (13-02-10 17:48)
+
+
 2013-02-07:
- ☐ test分目录
+ ✔ test分目录 @done (13-02-07 19:55)
+ ✔ url配置 @done (13-02-11 20:06)
+ ✔ 注册model测试完成 @done (13-02-11 20:06)
+ ✔ 注册业务的views测试完成 @done (13-02-11 20:06)
+ ✘ 那个signal的问题,在registration里的 @cancelled (13-02-11 20:06)
 
 
 2013-01-04:
  ☐ django 增量同步数据库
  ☐ 404 500页面
  ☐ form的save方法有个问题,为什么要有个commit参数
- ☐ 把http://djangobook.py3k.cn/2.0/chapter07/看完
- ☐ python的文档生成,和站点.sphinx?
- ☐ python文档注释规范,风格指导
- ☐ python的super
+ ✔ 把http://djangobook.py3k.cn/2.0/chapter07/看完 @done (13-02-11 23:03)
+ ✔ python的文档生成,和站点.sphinx? @done (13-02-11 23:03)
+ ✔ python文档注释规范,风格指导 @done (13-02-11 23:03)
+ ✔ python的super @done (13-02-11 23:03)
  ☐ django form里的meta
- ☐ templates放到app的下面
- ☐ tests变成文件夹,每个文件单独测试
- ☐ python 方法的参数
+ ✔ templates放到app的下面 @done (13-02-11 23:03)
+ ✔ tests变成文件夹,每个文件单独测试 @done (13-02-11 23:03)
+ ✔ python 方法的参数 @done (13-02-11 23:03)
 
 注册流程:
  ✔ 添加model registrationprofile @done (13-01-04 18:24)
