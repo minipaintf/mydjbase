@@ -146,6 +146,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'apps.todos',
     'apps.registration',
+    # ucenter
+    'apps.ucenter',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -202,3 +204,6 @@ sys.setdefaultencoding('utf-8')
 ACCOUNT_ACTIVATION_DAYS = 7
 # 注册开放
 REGISTRATION_OPEN = True
+
+# ucenter的配置
+from config.ucenter import *
